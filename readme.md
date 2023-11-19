@@ -11,7 +11,7 @@ Clone project:
 ```shell
 git init
 
-git clone ...
+git clone https://github.com/axelbunt/pizza_slice_bot.git
 ```
 
 You should create `.env` file and write in it:
@@ -89,7 +89,7 @@ Menu of commands:
 
 ![Menu of commands](/assets/images/demo_screenshots/2.jpg)
 
-Some commands:
+Commands from menu:
 
 ![Some commands](/assets/images/demo_screenshots/3.jpg)
 
