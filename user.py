@@ -9,11 +9,14 @@ class User:
     index_of_current_item_in_view: int
     is_banned: bool
 
-    def __init__(self, user_id: int,
-                 username: str,
-                 cart=None,
-                 index_of_current_item_in_view: int = 0,
-                 is_banned: bool = False) -> None:
+    def __init__(
+        self,
+        user_id: int,
+        username: str,
+        cart=None,
+        index_of_current_item_in_view: int = 0,
+        is_banned: bool = False,
+    ) -> None:
         if cart is None:
             cart = {}
         self.user_id = user_id

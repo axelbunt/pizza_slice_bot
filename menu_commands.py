@@ -42,12 +42,18 @@ class MenuBotCommand(BotCommandWithJSONSerializer):
         self.description = "get pizzeria menu"
 
 
-COMMANDS = [HelpBotCommand(), LocationBotCommand(), HoursBotCommand(),
-            MenuBotCommand()]
+COMMANDS = [
+    HelpBotCommand(),
+    LocationBotCommand(),
+    HoursBotCommand(),
+    MenuBotCommand(),
+]
 
 
 async def add_commands_to_bot_menu() -> requests.Response:
-    url = 'https://api.telegram.org/bot' + BOT_TOKEN + '/SetMyCommands?commands='
+    url = (
+        'https://api.telegram.org/bot' + BOT_TOKEN + '/SetMyCommands?commands='
+    )
     url += json.dumps([command.toJSON() for command in COMMANDS])
     response = requests.get(url)
     return response

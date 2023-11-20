@@ -16,22 +16,28 @@ async def send_list_of_commands_to_user(message: types.Message) -> None:
     help_message = "Use:\n"
     for command in menu_commands.COMMANDS:
         help_message += '/' + command.command + " – to "
-        + command.description + '\n'
+        +command.description + '\n'
     await send_message_directly(message, help_message)
 
 
 async def send_pizzeria_hours(message: types.Message) -> None:
-    await send_message_directly(message, "We're working on:\n"
-                                         "Mon-Fri from 9:00 to 22:00,\n"
-                                         "Sut-Sun from 10:00 to 20:00")
+    await send_message_directly(
+        message,
+        "We're working on:\n"
+        "Mon-Fri from 9:00 to 22:00,\n"
+        "Sut-Sun from 10:00 to 20:00",
+    )
 
 
 async def send_pizzeria_location(message: types.Message) -> None:
     await send_message_directly(message, "You can find us at this address:")
-    await bot.send_location(message.from_user.id,
-                            latitude=41.8954072,
-                            longitude=12.477454,
-                            horizontal_accuracy=500)
+    # ToDo: addresses in db, calculation of nearest pizzeria
+    await bot.send_location(
+        message.from_user.id,
+        latitude=41.8954072,
+        longitude=12.477454,
+        horizontal_accuracy=500,
+    )
 
 
 async def send_pizzeria_menu(message: types.Message) -> None:
@@ -43,12 +49,20 @@ async def send_pizzeria_menu(message: types.Message) -> None:
 # register bot commands
 def register_handlers_client(dp: Dispatcher) -> None:
     dp.register_message_handler(start, commands=['start'])
-    dp.register_message_handler(send_list_of_commands_to_user, 
-                                commands=[menu_commands.COMMANDS.HelpBotCommand().command])
+    dp.register_message_handler(
+        send_list_of_commands_to_user,
+        commands=[menu_commands.COMMANDS.HelpBotCommand().command],
+    )
 
-    dp.register_message_handler(send_pizzeria_hours,
-                                commands=[menu_commands.COMMANDS.HoursBotCommand().command])
-    dp.register_message_handler(send_pizzeria_location,
-                                commands=[menu_commands.COMMANDS.LocationBotCommand().command])
-    dp.register_message_handler(send_pizzeria_menu,
-                                commands=[menu_commands.COMMANDS.MenuBotCommand().command])
+    dp.register_message_handler(
+        send_pizzeria_hours,
+        commands=[menu_commands.COMMANDS.HoursBotCommand().command],
+    )
+    dp.register_message_handler(
+        send_pizzeria_location,
+        commands=[menu_commands.COMMANDS.LocationBotCommand().command],
+    )
+    dp.register_message_handler(
+        send_pizzeria_menu,
+        commands=[menu_commands.COMMANDS.MenuBotCommand().command],
+    )

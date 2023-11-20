@@ -15,8 +15,10 @@ def sql_start() -> None:
     if base:
         print('Data base connected OK')
 
-    base.execute("CREATE TABLE IF NOT EXISTS menu(img TEXT, name "
-                 "TEXT PRIMARY KEY, description TEXT, price FLOAT)")
+    base.execute(
+        "CREATE TABLE IF NOT EXISTS menu(img TEXT, name "
+        "TEXT PRIMARY KEY, description TEXT, price FLOAT)"
+    )
     base.commit()
 
 
@@ -24,8 +26,9 @@ def sql_start() -> None:
 async def sql_add_item(state: FSMContext) -> None:
     """Add item to pizzeria menu"""
     async with state.proxy() as data:
-        cur.execute("INSERT INTO menu VALUES (?, ?, ?, ?)",
-                    tuple(data.values()))
+        cur.execute(
+            "INSERT INTO menu VALUES (?, ?, ?, ?)", tuple(data.values())
+        )
         base.commit()
 
 
