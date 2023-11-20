@@ -9,7 +9,7 @@ from typing import List
 def sql_start() -> None:
     """Create or connect to DB with menu"""
     global base, cur
-    base = sq.connect('pizza_bot.db')
+    base = sq.connect('data_base/pizza_bot.db')
     cur = base.cursor()
 
     if base:

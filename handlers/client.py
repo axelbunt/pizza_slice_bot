@@ -51,18 +51,18 @@ def register_handlers_client(dp: Dispatcher) -> None:
     dp.register_message_handler(start, commands=['start'])
     dp.register_message_handler(
         send_list_of_commands_to_user,
-        commands=[menu_commands.COMMANDS.HelpBotCommand().command],
+        commands=[menu_commands.HelpBotCommand().command],
     )
 
     dp.register_message_handler(
         send_pizzeria_hours,
-        commands=[menu_commands.COMMANDS.HoursBotCommand().command],
+        commands=[menu_commands.HoursBotCommand().command],
     )
     dp.register_message_handler(
         send_pizzeria_location,
-        commands=[menu_commands.COMMANDS.LocationBotCommand().command],
+        commands=[menu_commands.LocationBotCommand().command],
     )
     dp.register_message_handler(
         send_pizzeria_menu,
-        commands=[menu_commands.COMMANDS.MenuBotCommand().command],
+        commands=[menu_commands.MenuBotCommand().command],
     )
