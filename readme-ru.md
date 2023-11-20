@@ -1,5 +1,7 @@
 # Pizza Slice Bot 🍕
 
+[![CI/CD](https://github.com/axelbunt/pizza_slice_bot/actions/workflows/CI-CD.yml/badge.svg)](https://github.com/axelbunt/pizza_slice_bot/actions/workflows/CI-CD.yml)
+
 Русский | [English](/readme.md)
 
 ## Описание проекта
