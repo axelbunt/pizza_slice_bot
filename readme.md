@@ -1,8 +1,10 @@
 # Pizza Slice Bot 🍕
 
+English | [Русский](/readme-ru.md)
+
 ## Project description
 
-[*Pizza Slice Bot*](https://t.me/PizzaSlice_bot) is a telegram bot designed specifically for pizzeria to facilitate the pizza ordering process for customers. The bot provides a user-friendly interface for getting acquainted with the menu, choosing dishes and paying for an order directly in the Telegram application.
+[*Pizza Slice Bot*](https://t.me/PizzaSlice_bot) is a telegram bot designed specifically for pizzerias to facilitate the pizza ordering process for customers. The bot provides a user-friendly interface for getting acquainted with the menu, choosing dishes and paying for an order directly in the Telegram application.
 
 ## Getting started with the project
 
@@ -22,7 +24,7 @@ PAYMENT_TOKEN={your bot payment token}
 ...
 ```
 
-See `.env.template` for more variables to write in `.env`...)
+> See `.env.template` for more variables to write in `.env`...)
 
 Substitution of a value from a virtual environment occurs in file `constants.py`.
 
@@ -91,10 +93,10 @@ Menu of commands:
 
 ![Menu of commands](/assets/images/demo_screenshots/2.jpg)
 
-Commands from menu:
+Using different bot commands:
 
-![Some commands](/assets/images/demo_screenshots/3.jpg)
+![Using different bot commands](/assets/images/demo_screenshots/3.jpg)
 
-Menu and invoice for payment:
+Menu and invoice for order payment:
 
-![Menu and invoice for payment](/assets/images/demo_screenshots/4.jpg)
+![Menu and invoice for order payment](/assets/images/demo_screenshots/4.jpg)
