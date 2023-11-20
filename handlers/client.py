@@ -15,8 +15,8 @@ async def start(message: types.Message) -> None:
 async def send_list_of_commands_to_user(message: types.Message) -> None:
     help_message = "Use:\n"
     for command in menu_commands.COMMANDS:
-        help_message += '/' + command.command + " – to "
-        +command.description + '\n'
+        help_message += '/' + command.command + " – to " + \
+         command.description + '\n'
     await send_message_directly(message, help_message)
 
 
