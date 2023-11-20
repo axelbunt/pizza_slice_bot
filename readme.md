@@ -2,7 +2,7 @@
 
 ## Project description
 
-*Pizza Slice Bot* is a telegram bot designed specifically for pizzeria to facilitate the pizza ordering process for customers. The bot provides a user-friendly interface for getting acquainted with the menu, choosing dishes and paying for an order directly in the Telegram application.
+[*Pizza Slice Bot*](https://t.me/PizzaSlice_bot) is a telegram bot designed specifically for pizzeria to facilitate the pizza ordering process for customers. The bot provides a user-friendly interface for getting acquainted with the menu, choosing dishes and paying for an order directly in the Telegram application.
 
 ## Getting started with the project
 
@@ -11,7 +11,7 @@ Clone project:
 ```shell
 git init
 
-git clone ...
+git clone https://github.com/axelbunt/pizza_slice_bot.git
 ```
 
 You should create `.env` file and write in it:
@@ -81,6 +81,8 @@ This project will allow the pizzeria to improve customer service by making the o
 
 ## It's demo time!
 
+Bot on Telegram: https://t.me/PizzaSlice_bot
+
 Bot description:
 
 ![Bot description](/assets/images/demo_screenshots/1.jpg)
@@ -89,7 +91,7 @@ Menu of commands:
 
 ![Menu of commands](/assets/images/demo_screenshots/2.jpg)
 
-Some commands:
+Commands from menu:
 
 ![Some commands](/assets/images/demo_screenshots/3.jpg)
 
