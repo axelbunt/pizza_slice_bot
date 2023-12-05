@@ -45,7 +45,14 @@ Another way to activate venv (for Linux/MacOS):
 source venv/bin/activate
 ```
 
-This will run bot in LongPolling mode.
+This will run bot in Long-polling mode.
+
+> Long-polling is a technology that allows a Telegram server to send updates in case when you don’t have dedicated IP address or port to receive webhooks for example on a developer machine.  
+[*Aiogram docs*](https://docs.aiogram.dev/en/latest/dispatcher/long_polling.html)
+
+> *More detailed description*:  
+In Long-polling mode, the bot periodically sends requests to the Telegram server, querying for any new messages. This approach involves the bot actively asking the server at intervals:  
+– Are there any new messages for me?
 
 ---
 
