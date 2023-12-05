@@ -25,7 +25,7 @@ async def send_pizzeria_hours(message: types.Message) -> None:
         message,
         "We're working on:\n"
         "Mon-Fri from 9:00 to 22:00,\n"
-        "Sut-Sun from 10:00 to 20:00",
+        "Sat-Sun from 10:00 to 20:00",
     )
 
 
