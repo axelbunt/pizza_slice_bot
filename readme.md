@@ -13,8 +13,6 @@ English | [Русский](/readme-ru.md)
 Clone project:
 
 ```shell
-git init
-
 git clone https://github.com/axelbunt/pizza_slice_bot.git
 ```
 
@@ -64,7 +62,7 @@ Installing different dependencies for production and developing:
 
 ## Functionality
 
-1. **Menu of commands**  
+1. **Menu of commands**
 Clients can interact with the bot using various commands, such as:
     - `/start` to get started,
     - `/help` to get descriptions of bot commands,
@@ -72,13 +70,13 @@ Clients can interact with the bot using various commands, such as:
     - `/location` to get location of nearest pizzeria,
     - `/hours` to get pizzeria working hours.
 
-2. **Interactive menu**  
+2. **Interactive menu**
 Users can view menu with different types of pizza. Each menu item is provided with a description and price.
 
-3. **Choice of pizzas**  
+3. **Choice of pizzas**
 The ability to select dishes from the menu using the inline buttons. Customers can add and remove items from the cart, see the total cost of the order.
 
-4. **Payment of the order**  
+4. **Payment of the order**
 Integration with Stripe payment system to ensure safe and convenient payment of the order. Customers can choose a convenient payment method, such as credit card or electronic payments.
 
 This project will allow the pizzeria to improve customer service by making the ordering process more convenient and efficient through the popular messenger application.
