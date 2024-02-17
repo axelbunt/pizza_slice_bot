@@ -92,6 +92,13 @@ This project will allow the pizzeria to improve customer service by making the o
 
 Bot on Telegram: https://t.me/PizzaSlice_bot
 
+> The bot supports test payment, enter the following card details for payment (Stripe Test Card):  
+*Card number* - `4242 4242 4242 4242`.  
+*Expiry date* - `A valid future date, such as 12/34`.  
+*CVC* - `Any three-digit CVC`.
+>
+> *Use any value you like for other form fields.*
+
 Bot description:
 
 ![Bot description](/assets/images/demo_screenshots/1.jpg)
