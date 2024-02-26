@@ -1,6 +1,7 @@
 from collections import defaultdict
 from copy import deepcopy
 from datetime import datetime
+from typing import List, Tuple
 
 from aiogram import types, Dispatcher
 from aiogram.types import (
@@ -30,7 +31,6 @@ navigation_markup.add(back_scroll_btn, forward_scroll_btn)
 
 admin_buttons = []
 
-users_dict = defaultdict(User)  # Structure: { chat_id: User }
 delete_from_basket_btn = InlineKeyboardButton(
     '🔻', callback_data='delete_one_item_from_basket'
 )
@@ -40,6 +40,20 @@ add_to_basket_btn = InlineKeyboardButton(
 # counter_of_item_btn = InlineKeyboardButton('',
 # callback_data='show_this_type_of_items_in_basket')
 pay_btn = InlineKeyboardButton('Pay order 💳', callback_data='pay')
+
+users_dict = defaultdict(User)  # Structure: { chat_id: User }
+
+
+async def return_pizza_description(menu_item: List) -> Tuple[str, str]:
+    """Return string with pizza description as first value, and parse mode
+    as second value"""
+
+    description = f"<b><i>{menu_item[1]}</i></b>\n" \
+                  f"<i>Description</i>: {menu_item[2]}\n" \
+                  f"<i>Price</i>: {menu_item[3]} $"
+    parse_mode = "html"
+
+    return tuple([description, parse_mode])
 
 
 async def return_markup_with_relevant_item_counter(
@@ -90,13 +104,12 @@ async def scroll_menu_item_forward_or_back(
     menu_item = menu[index_of_item_in_view]
     new_photo = InputMediaPhoto(media=menu_item[0])
 
+    pizza_description, parse_mode = await return_pizza_description(menu_item)
+
     await callback.message.edit_media(new_photo)
-    # ToDo: make format change in one place
     await callback.message.edit_caption(
-        f"<b><i>{menu_item[1]}</i></b>\n"
-        f"<i>Description</i>: {menu_item[2]}\n"
-        f"<i>Price</i>: {menu_item[3]} $",
-        parse_mode="html",
+        pizza_description,
+        parse_mode=parse_mode,
         reply_markup=tmp_markup,
     )
 
@@ -115,13 +128,14 @@ async def send_menu_item_to_user(
     tmp_markup = await return_markup_with_relevant_item_counter(
         message.chat.id, menu_item
     )
+
+    pizza_description, parse_mode = await return_pizza_description(menu_item)
+
     await bot.send_photo(
         message.from_user.id,
         menu_item[0],
-        f"<b><i>{menu_item[1]}</i></b>\n"
-        f"<i>Description</i>: {menu_item[2]}\n"
-        f"<i>Price</i>: {menu_item[3]} $",
-        parse_mode="html",
+        pizza_description,
+        parse_mode=parse_mode,
         reply_markup=tmp_markup,
     )
 
