@@ -200,7 +200,7 @@ async def show_alert_with_count_of_items(
 async def pay_order(callback: types.CallbackQuery) -> None:
     chat_id = callback.message.chat.id
     if not users_dict[chat_id].cart:
-        await callback.answer("Your basket is empty!", show_alert=True)
+        await callback.answer("Your cart is empty!", show_alert=True)
         return
 
     order = []
@@ -238,7 +238,7 @@ async def successful_payment(message: types.Message) -> None:
     # payment_info = message.successful_payment.to_python()
     # { 'currency', 'total_amount', 'invoice_payload',
     # 'telegram_payment_charge_id', 'provider_payment_charge_id' }
-    await message.answer("Your order is starting to be prepared:)")
+    await message.answer("We're getting started on your order:)")
     # ToDo: write order in db with all orders...
 
 
